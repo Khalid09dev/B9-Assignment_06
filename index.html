@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Forum</title>
+    <!-- tailwindcss cdn link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font- mulish  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- daisy ui cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        body {
+            font-family: 'Mulish';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flex justify-between items-center pt-8 px-28">
+            <img src="./images/logo.png" alt="#">
+            <div class="flex items-center">
+                <div class="tooltip" data-tip="home">
+                    <img class="bg-[#12132D08] mr-2 p-[10px] rounded-3xl w-10" src="./images/home.png" alt="#">
+                </div>
+                <div class="tooltip" data-tip="edit">
+                    <img class=" bg-[#12132D08] mr-2 p-[8px] rounded-3xl" src="./images/pen.png" alt="#">
+                </div>
+                <div class="tooltip" data-tip="user">
+                    <img class=" bg-[#12132D08] mr-2 p-[8px] rounded-3xl" src="./images/user.png" alt="#">
+                </div>
+                <div class="tooltip" data-tip="flag">
+                    <img class="flag bg-[#12132D08] mr-2 p-[8px] rounded-3xl" src="./images/flag.png" alt="#">
+                </div>
+                <button class="text-white text-base font-semibold px-7 py-[10px] rounded-[50px] ml-6 bg-[#797DFC]">Sign In</button>
+            </div>
+        </div>
+        <!-- navbar section end  -->
+
+        <!-- banner section start  -->
+        <section class="flex justify-around items-center mx-[134px] mt-12 rounded-[32px] pt-[99px] pb-[120px] bg-[#12132D]" style="background-image: url('./images/bgbanner.png'); height: 550px; background-repeat: no-repeat; background-position: bottom;">
+            <div>
+                <h1 class="text-white text-6xl font-extrabold">Welcome to the <br> <span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                <p class="text-[#ffffffcc] pt-5 pb-8">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                <div class="pb-6">
+                    <div class="absolute">
+                        <input id="search-field" class="py-3 pl-[20px] pr-[100px] rounded-3xl" type="text" placeholder="Search here anything" class=""> <button onclick="handleSearch()"  class="text-white inter flex items-center text-base font-normal px-6 py-3 bottom-2 bg-[#797DFC] rounded-3xl absolute right-3 top-2">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white px-12 py-12 rounded-3xl">
+                <div class="flex gap-14 text-[#12132D] text-xl font-medium pb-6"><p>Registered Users</p><span>01</span></div>
+                <div class="flex gap-[154px] text-[#12132D] text-xl font-medium pb-6"><p>Forum</p><span>05</span></div>
+                <div class="flex gap-[154px] text-[#12132D] text-xl font-medium pb-6"><p>Topics</p><span>01</span></div>
+                <div class="flex gap-[146px] text-[#12132D] text-xl font-medium"><p>Replies</p><span>01</span></div>
+            </div>
+        </section>
+        <!-- banner section end  -->
+
+        <!-- spinner or loader  -->
+        <div id="loading-spinner"  class="text-center hidden">
+            <span class="loading loading-spinner loading-lg bg-orange-400"></span>
+        </div>
+        <!-- spinner or loader  -->
+
+    </header>
+
+    <main>
+
+            <!-- lets discussion section start  -->
+    <h1 class="text-[#12132D] text-center text-[40px] font-black pt-24">Let’s Discuss</h1>
+    <p class="text-[#12132d99] text-[18px] font-normal text-center pt-6 pb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+
+        <section class="flex justify-center gap-6">
+            <div id="post-container">
+
+            </div>
+
+            <!-- mark as read start  -->
+            <section id="mark-read" class="bg-[#12132d0d] p-6 rounded-2xl mt-3 h-full invisible">
+                <div class="flex gap-32">
+                    <h5 class="text-[#12132D] font-bold text-[20px]">Title</h5>
+                    <div class="flex items-center gap-1">
+                        <img src="./images/tick-mark.png" alt="#">
+                        <p class="text-[#12132d99]">Mark as read (<span id="read-count">0</span>)</p>
+                    </div>
+                </div>
+            </section>
+            <!-- mark as read end  -->
+        </section>
+        <!-- lets discussion section end  -->
+
+        <!-- forum joining section start  -->
+        <div class="flex justify-center bg-[#12132D] pt-14 items-center gap-4 mx-24 rounded-[32px] mt-24">
+            <div>
+                <h1 class="text-white text-[40px] font-black">Join Our Forum</h1>
+                <p class="text-[#ffffffcc] text-[18px] font-medium pt-[17px] pb-8">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> <span class="font-normal">run unit tests and view the results directly within the app.</span></p>
+                <button class="text-white text-[18px] font-bold py-3 px-8 bg-[#797DFC] rounded-[50px]">Registered Now</button>
+            </div>
+            <img src="./images/joinforum.png" alt="#">
+        </div>
+        <!-- forum joining section end  -->
+
+
+        <!-- latest post section start  -->
+        <h1 class="text-[#12132D] text-[40px] text-center font-black pt-24">Latest Posts</h1>
+        <p class="text-[#12132d99] text-[18px] text-center font-normal pt-5 pb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+
+        <div class="flex justify-center mx-10 gap-6" id="latest-post-container">
+            <!-- <div class="p-6 border-[1px]"> -->
+                <!-- <img class="w-80 h-48 bg-[#12132d0d] rounded-3xl" alt="#">
+                <div class="flex pt-6 pb-3 gap-1"><img src="./images/date-logo.png" alt="#"><span>29 January 2024</span></div>
+                <p class="text-[#12132D] text-[18px] font-extrabold">What will a mars habitat force that <br> impact in our daily life!!!</p>
+                <p class="text-[#12132d99] text-base font-normal pt-2 pb-4">Yes, you can run unit tests and view the <br> results directly within the app.</p>
+                <div class="flex gap-4">
+                    <img class="w-11 h-11 rounded-[44px] bg-red-300" src="" alt="#">
+                    <div>
+                        <p class="text-[#12132D] text-base font-bold">Cameron Williamson</p>
+                        <p class="text-[#12132d99] text-sm font-normal">Unknown</p>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+            <div></div>
+            <div></div>
+        </div>
+        <!-- latest post section end  -->
+    </main>
+
+    <footer class="py-20 bg-[#12132d0d] mt-20">
+        <img class="mx-auto" src="./images/logo.png" alt="#">
+        <p class="text-center text-[#12132db3] pt-4 pb-8">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a <br> piece of classical Latin literature from 45 BC</p>
+        <img class="mx-auto mb-11" src="./images/Social.png" alt="#">
+        <hr class="mx-44">
+        <p class="text-[#12132d80] text-center pt-12">2017, All Rights Reserved.</p>
+    </footer>
+
+    <script src="./scripts/all-post.js"></script>
+    <script src="./scripts/latest-post.js"></script>
+</body>
+</html>
